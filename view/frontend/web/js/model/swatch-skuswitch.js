@@ -3,7 +3,6 @@ define([
     'mage/utils/wrapper'
 ], function ($, wrapper) {
     'use strict';
-
     return function(targetModule){
         var updatePrice = targetModule.prototype._UpdatePrice;
         targetModule.prototype.configurableSku = $('div.product-info-main .sku .value').html();
@@ -22,7 +21,6 @@ define([
             $('div.product-info-main .sku .value').html(simpleSku);
             return original();
         });
-
         targetModule.prototype._UpdatePrice = updatePriceWrapper;
         return targetModule;
     };
